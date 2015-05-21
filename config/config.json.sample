@@ -1,0 +1,13 @@
+{
+  "port"             : "",
+  "webhookPort"      : "",
+  "certFilename"     : "",
+  "keyFilename"      : "",
+  "clientID"         : "",
+  "clientSecret"     : "",
+  "cookieSecret"     : "",
+  "oauthState"       : "",
+  "packagePath"      : "",
+  "mongoAddress"     : "",
+  "gcmAPIKey"        : ""
+}

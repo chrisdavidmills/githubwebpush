@@ -1,0 +1,8 @@
+{  
+  "name": "GitHub WebPush",  
+  "short_name": "GitHub WebPush",  
+  "start_url": "/",  
+  "display": "standalone",  
+  "gcm_sender_id": "12328867774",  
+  "gcm_user_visible_only": true  
+}

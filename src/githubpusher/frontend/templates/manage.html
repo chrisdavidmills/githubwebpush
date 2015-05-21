@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>GitHub PushAPI Notifier!</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="js/manage.js"></script>
+</head>
+
+<body>
+    <h1>GitHub PushAPI Notifier!</h1>
+    <h2> Hello {{.Name}}! ({{.Count}})</h2>
+    <h3> Starred Repositories </h3>
+    <div> Please install the GitHubPush WebHook to enable. </div>
+    
+    <ul>
+    {{ range .Repos }}
+    <li>
+    <a href="{{ . }}/settings/hooks"> {{ . }}/settings/hooks </a>
+    </li>
+    {{ end }}
+    </ul>
+
+    <ul>
+    {{ range .PendingEvents }}
+    <li>
+    {{ . }}
+    </li>
+    {{ end }}
+    </ul>
+
+    <div>
+        <button onclick="logout();">Logout</button>
+    <div>
+
+    <div>
+  </div>
+</body>
+</html>

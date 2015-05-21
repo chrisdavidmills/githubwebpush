@@ -1,0 +1,26 @@
+
+        html, body {
+          margin: 0;
+          padding: 10px;
+          font-family: Lucida Grande, sans-serif;
+      }
+
+      body {
+          background-color: #E79910;
+      }
+
+      h1 {
+          font-weight: bolder;
+          font-size: xx-large;
+          margin: auto;
+          margin-bottom: 30px;
+          color: white;
+      }
+
+      button {
+          background-color: #414141;
+          border: none;
+          border-radius: 3px;
+          color: white;
+          font-weight: bold;
+      }

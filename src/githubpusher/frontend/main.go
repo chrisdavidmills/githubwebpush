@@ -134,7 +134,7 @@ func handleRegister(w http.ResponseWriter, r *http.Request) {
 	//TODO add something to go update the user's repos ever so often
 	repos := []string{}
 	for _, e := range starred {
-		repos = append(repos, *e.HTMLURL)
+		repos = append(repos, *e.Repository.HTMLURL)
 	}
 
 	d, _ := tokenToJSON(token)

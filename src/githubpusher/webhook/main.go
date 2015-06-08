@@ -11,6 +11,7 @@ import (
 	"githubpusher/db"
 	"log"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 )
@@ -77,7 +78,7 @@ func handleWebhook(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-
+	log.SetOutput(os.Stdout)
 	log.Println("Hello webhook")
 	flag.Parse()
 

@@ -13,6 +13,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 	"path"
 )
 
@@ -228,6 +229,7 @@ func setupCookie(config *config.ServerConfig) {
 }
 
 func main() {
+	log.SetOutput(os.Stdout)
 	log.Println("Hello")
 	flag.Parse()
 

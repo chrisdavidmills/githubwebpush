@@ -5,7 +5,8 @@ function register() {
   navigator.serviceWorker.ready.then(
     function(swr) {
 
-      swr.pushManager.subscribe().then(
+      var options = {userVisibleOnly: true}
+      swr.pushManager.subscribe(options).then(
         function(pushSubscription) {
 
           var data = new FormData();

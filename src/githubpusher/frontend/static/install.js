@@ -10,6 +10,8 @@ function register() {
 
           var data = new FormData();
           data.append('endpoint', pushSubscription.endpoint);
+          data.append('subscription', pushSubscription.subscriptionId);
+
           var xhr = new XMLHttpRequest();
           xhr.open("POST", "/register");
           xhr.onload = function () {

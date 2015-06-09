@@ -141,7 +141,7 @@ func handleRegister(w http.ResponseWriter, r *http.Request) {
 	d, _ := tokenToJSON(token)
 
 	log.Println("token: ", d)
-	db.AddUsersToDB(&db.User{*user.Name, d, repos, r.FormValue("endpoint"), nil})
+	db.AddUsersToDB(&db.User{*user.Name, d, repos, r.FormValue("endpoint"), r.FormValue("subscription"), nil})
 }
 
 func handleManage(w http.ResponseWriter, r *http.Request) {

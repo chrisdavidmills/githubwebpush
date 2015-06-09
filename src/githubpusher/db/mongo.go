@@ -13,6 +13,7 @@ type User struct {
 	GitHubToken  string
 	Repos        []string
 	PushEndpoint string
+	Subscription string
 	PushEvents   []github.WebHookPayload
 }
 

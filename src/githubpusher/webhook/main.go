@@ -65,13 +65,22 @@ func handleWebhook(w http.ResponseWriter, r *http.Request) {
 				log.Println("Failed to send message:", err)
 				return
 			}
+		} else if strings.HasPrefix(u.PushEndpoint, "https://android.googleapis.com/gcm/send") {
+			sender := &gcm.Sender{ApiKey: config.GCPApiKey}
+			msg := gcm.NewMessage(data, u.Subscription)
+
+			_, err := sender.Send(msg, 2)
+			if err != nil {
+				log.Println("Failed to send message:", err)
+				return
+			}
 		} else if strings.HasPrefix(u.PushEndpoint, "https://updates.push.services.mozilla.com/push/") {
 			token := fmt.Sprintf("version=%d", int64(time.Now().Unix()))
 			pushRequest, _ := http.NewRequest("PUT", u.PushEndpoint, strings.NewReader(token))
 			var client http.Client
 			client.Do(pushRequest)
 		} else {
-			log.Println("webhook:  Odd PushEndpoint found (%s)\n", u.PushEndpoint)
+			log.Println("webhook:  Odd PushEndpoint found ", u.PushEndpoint)
 			continue
 		}
 	}
